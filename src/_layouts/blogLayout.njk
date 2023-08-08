@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+{% if heroImage %}<img src="/assets/images/{{heroImage}}" /> {%endif%}
+{{content| safe}}
+<br>
+<hr>
+<br>
+{%include "partials/_paginate.njk"%}
+<br>
+<br>
+<hr>
+<a href="/blog">Blog Home</a>
