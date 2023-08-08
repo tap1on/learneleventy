@@ -1,8 +1,11 @@
 /* .eleventy.js */
 
+const Image = require("@11ty/eleventy-img");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy({"src/robots.txt": "/robots.txt"});
 
     eleventyConfig.addCollection("page", function(collections) {
         return collections.getFilteredByTag("page").sort(function(a, b) {

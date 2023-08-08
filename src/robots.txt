@@ -1,0 +1,13 @@
+# *
+
+User-agent: *
+
+Allow: /
+
+
+# Host
+
+Host: https://phenomenal-figolla-b72581.netlify.app/
+
+# Sitemaps
+Sitemap: https://phenomenal-figolla-b72581.netlify.app/sitemap.xml
