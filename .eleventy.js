@@ -1,12 +1,12 @@
 /* .eleventy.js */
-
-const Image = require("@11ty/eleventy-img");
 const { DateTime } = require("luxon");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy({"src/robots.txt": "/robots.txt"});
+  eleventyConfig.addPassthroughCopy("src/admin");
 
 
     eleventyConfig.addCollection("page", function(collections) {
@@ -25,8 +25,17 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addShortcode("currentDate", (date = DateTime.now()) => {
     return date;
-  })
+  });
 
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
+  eleventyConfig.addFilter("dateStuff", (dateObj) => {
+      return DateTime.fromJSDate(dateObj)
+        .setLocale("uk")
+        .toLocaleString(DateTime.MEDIUM);
+  });
 
   return {
     dir: {

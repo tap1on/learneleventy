@@ -1,6 +1,8 @@
 <!-- _includes/partials/_navigation.njk-->
-<nav>
-    {%- for item in collections.page -%}
-        <a href="{{ item.url }}">{{ item.data.title }}</a>
-    {%- endfor -%}
-</nav>
+<header class="bg-black text-gray-50 py-4">
+    <nav class="max-w-2xl mx-auto text-lg space-x-6">
+        {%- for item in collections.page -%}
+            <a href="{{ item.url }}">{{ item.data.title }}</a>
+        {%- endfor -%}
+    </nav>
+</header>
