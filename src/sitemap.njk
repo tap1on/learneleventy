@@ -1,0 +1,13 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFormCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in collection.all %}
+    <url>
+        <loc>https://phenomenal-figolla-b72581.netlify.app/{page.url}</loc>
+        <lastmod>{% currentDate date %}</lastmod>
+    </url>
+    {% endfor %}
+</urlset>
